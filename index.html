@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyoCoach - Personal Fitness, Strength Tracking &amp; Muscle Recovery Coach</title>
+  <meta name="description" content="Track your strength, visualize muscle fatigue with real-time anatomical heatmaps, and train smarter with AI-driven recovery scheduling. Download MyoCoach on Google Play.">
+  <link rel="canonical" href="https://myocoach.app/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myocoach.app/">
+  <meta property="og:title" content="MyoCoach - Smarter Lifts. Optimal Muscle Recovery.">
+  <meta property="og:description" content="Visual muscle recovery heatmap, effortless workout logging, and AI-suggested training splits for Android.">
+  <meta property="og:image" content="https://myocoach.app/icon.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://myocoach.app/">
+  <meta property="twitter:title" content="MyoCoach - Personal Fitness &amp; Muscle Recovery Coach">
+  <meta property="twitter:description" content="Stop guessing your recovery. Track muscle fatigue, log sets effortlessly, and hit PRs with MyoCoach.">
+  <meta property="twitter:image" content="https://myocoach.app/icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icon.png">
+
+  <!-- Schema.org SoftwareApplication Structured Data for Google Search SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MyoCoach",
+    "operatingSystem": "Android",
+    "applicationCategory": "HealthApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Personal Fitness, Strength Tracking and Muscle Recovery Coach with real-time muscle fatigue heatmaps and smart workout logs.",
+    "url": "https://myocoach.app/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.PANDEV.myocoach",
+    "author": {
+      "@type": "Organization",
+      "name": "PANDEV"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #090D16;
+      --bg-card: rgba(22, 29, 47, 0.7);
+      --bg-card-hover: rgba(30, 40, 64, 0.85);
+      --primary: #00E5FF;
+      --primary-glow: rgba(0, 229, 255, 0.35);
+      --accent: #7C4DFF;
+      --success: #00E676;
+      --warning: #FFB300;
+      --danger: #FF5252;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(124, 77, 255, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(0, 229, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(0, 230, 118, 0.08) 0%, transparent 50%);
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 13, 22, 0.85);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 0 16px var(--primary-glow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #00E5FF 0%, #7C4DFF 100%);
+      color: #050811;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 100px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(0, 229, 255, 0.08);
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--success);
+      box-shadow: 0 0 10px var(--success);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #00E5FF 10%, #B388FF 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .play-store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 10px 22px;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .play-store-badge:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+      box-shadow: 0 8px 24px rgba(0, 229, 255, 0.25);
+    }
+
+    .play-store-badge svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .badge-text .small {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #A0AEC0;
+    }
+
+    .badge-text .big {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .secondary-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .secondary-link:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* Mockup Display */
+    .mockup-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone-card {
+      width: 100%;
+      max-width: 360px;
+      background: #111726;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 36px;
+      padding: 24px;
+      box-shadow: 
+        0 24px 60px -12px rgba(0, 0, 0, 0.7),
+        0 0 50px rgba(0, 229, 255, 0.15);
+      position: relative;
+    }
+
+    .phone-notch {
+      width: 100px;
+      height: 18px;
+      background: #090D16;
+      border-radius: 0 0 14px 14px;
+      margin: -24px auto 18px;
+    }
+
+    .phone-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .score-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 230, 118, 0.12);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    .interactive-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+
+    .interactive-card h4 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .muscle-status-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .muscle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+    }
+
+    .status-tag {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .status-ready {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--success);
+    }
+
+    .status-recovering {
+      background: rgba(255, 179, 0, 0.15);
+      color: var(--warning);
+    }
+
+    .status-fatigued {
+      background: rgba(255, 82, 82, 0.15);
+      color: var(--danger);
+    }
+
+    .next-workout-box {
+      background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(124, 77, 255, 0.15) 100%);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .workout-info h5 {
+      font-size: 0.92rem;
+      color: #fff;
+    }
+
+    .workout-info p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .start-btn {
+      background: var(--primary);
+      color: #050811;
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+
+    .section-header h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Bento Grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 32px;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 229, 255, 0.3);
+      background: var(--bg-card-hover);
+    }
+
+    .card-span-2 {
+      grid-column: span 2;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .bento-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .bento-card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* How It Works */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .step-item {
+      text-align: center;
+      padding: 36px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00E5FF, #7C4DFF);
+      color: #050811;
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .step-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* FAQ Section */
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(0, 229, 255, 0.3);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .faq-toggle {
+      color: var(--primary);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    .faq-answer {
+      margin-top: 14px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    /* Final CTA */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(0, 229, 255, 0.12) 0%, rgba(124, 77, 255, 0.15) 100%);
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      border-radius: 28px;
+      padding: 64px 32px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cta-banner h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .cta-banner p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 580px;
+      margin: 0 auto 32px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 40px;
+      background: rgba(5, 8, 14, 0.9);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+      max-width: 320px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 48px;
+    }
+
+    .footer-col h5 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 24px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 50px 0 60px;
+      }
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-group {
+        justify-content: center;
+      }
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-span-2 {
+        grid-column: span 1;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="brand">
+          <img src="icon.png" alt="MyoCoach Logo">
+          <span>MyoCoach</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+        <a href="https://play.google.com/store/apps/details?id=com.PANDEV.myocoach" target="_blank" class="nav-btn">
+          <span>Get the App</span> &rarr;
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <div class="container">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>Live on Google Play Store</span>
+          </div>
+          <h1>Smarter Lifts. <br><span class="gradient-text">Optimal Recovery.</span></h1>
+          <p class="hero-sub">
+            Stop guessing when to train. MyoCoach tracks your strength, visualizes muscle fatigue with real-time anatomical heatmaps, and calculates optimal recovery splits.
+          </p>
+          <div class="cta-group">
+            <a href="https://play.google.com/store/apps/details?id=com.PANDEV.myocoach" target="_blank" class="play-store-badge">
+              <svg viewBox="0 0 512 512">
+                <path fill="#4285F4" d="M48.7 13.9C36.9 26.5 30 46.1 30 71.4v369.2c0 25.3 6.9 44.9 18.7 57.5l3.2 3.1 206.8-206.8v-4.9L51.9 10.8l-3.2 3.1z"/>
+                <path fill="#FFBA00" d="M328.7 326.6l-70-70v-4.9l70-70 1.6.9 82.9 47.1c23.6 13.4 23.6 35.4 0 48.9l-82.9 47.1-1.6.9z"/>
+                <path fill="#00E676" d="M258.7 251.7L51.9 448.5c7.8 8.3 20.8 9.3 35.5 1l241.3-137.1-70-60.7z"/>
+                <path fill="#FF334B" d="M258.7 260.3l70-60.7L87.4 62.5c-14.7-8.3-27.7-7.3-35.5 1l206.8 196.8z"/>
+              </svg>
+              <div class="badge-text">
+                <span class="small">Get it on</span>
+                <span class="big">Google Play</span>
+              </div>
+            </a>
+            <a href="#features" class="secondary-link">Explore Features &darr;</a>
+          </div>
+        </div>
+
+        <!-- Phone Mockup Preview -->
+        <div class="mockup-wrapper">
+          <div class="phone-card">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div>
+                <div style="font-size: 0.75rem; color: #94A3B8;">DAILY READINESS</div>
+                <div style="font-size: 1.1rem; font-weight: 700;">Myo Recovery</div>
+              </div>
+              <div class="score-badge">
+                <span>⚡ 88% READY</span>
+              </div>
+            </div>
+
+            <!-- Heatmap list card -->
+            <div class="interactive-card">
+              <h4>Muscle Fatigue Status</h4>
+              <div class="muscle-status-list">
+                <div class="muscle-row">
+                  <span>Chest (Pectorals)</span>
+                  <span class="status-tag status-ready">100% Ready</span>
+                </div>
+                <div class="muscle-row">
+                  <span>Shoulders (Deltoids)</span>
+                  <span class="status-tag status-ready">92% Ready</span>
+                </div>
+                <div class="muscle-row">
+                  <span>Back (Latissimus)</span>
+                  <span class="status-tag status-recovering">Recovering (12h)</span>
+                </div>
+                <div class="muscle-row">
+                  <span>Legs (Quadriceps)</span>
+                  <span class="status-tag status-fatigued">Fatigued (24h)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Suggested workout box -->
+            <div class="next-workout-box">
+              <div class="workout-info">
+                <h5>Suggested: Push Day</h5>
+                <p>Chest, Shoulders &amp; Triceps</p>
+              </div>
+              <a href="https://play.google.com/store/apps/details?id=com.PANDEV.myocoach" target="_blank" class="start-btn">Start</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Features Grid -->
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Built for Lifters Who Want <span class="gradient-text">Real Science</span></h2>
+          <p>Ditch generic workout notes. MyoCoach pairs progressive overload tracking with systemic muscle recovery science.</p>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-card card-span-2">
+            <div class="card-icon">🧬</div>
+            <h3>Anatomical Muscle Heatmap</h3>
+            <p>Know which muscle groups are primed for hypertrophy and which need more time to repair. Our dynamic visual heatmap colorizes fatigue across chest, back, shoulders, arms, legs, and core so you never overtrain.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="card-icon">⚡</div>
+            <h3>Zero-Friction Logger</h3>
+            <p>Log your weights, reps, and sets with automated rest timers between working sets. Focus on the lift, not typing.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="card-icon">🤖</div>
+            <h3>AI Routine Recommendations</h3>
+            <p>Intelligent workout suggestions adapt to your schedule and muscle readiness, ensuring balanced push/pull/legs splits.</p>
+          </div>
+
+          <div class="bento-card card-span-2">
+            <div class="card-icon">📈</div>
+            <h3>Strength Overload &amp; 1RM Analytics</h3>
+            <p>Track your estimated One-Rep Max (1RM), volume tonnage, and personal records across all major compounds and isolation movements over weeks and months.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="card-icon">🔒</div>
+            <h3>Privacy First Architecture</h3>
+            <p>No selling your biometric or workout data. Clean local data controls with optional secure cloud sync.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" style="background: rgba(15, 23, 42, 0.4);">
+      <div class="container">
+        <div class="section-header">
+          <h2>How MyoCoach Works</h2>
+          <p>Three simple steps to break past plateaus and optimize recovery.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <h3>Log Your Routine</h3>
+            <p>Record your sets, reps, and weight during your gym session with zero distraction.</p>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <h3>Track Recovery Hours</h3>
+            <p>The app calculates muscle fatigue and projects recovery hours based on intensity and volume.</p>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <h3>Train Ready Muscles</h3>
+            <p>Step into the gym knowing with 100% certainty what muscle group is ready to hit a new PR.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Everything you need to know about MyoCoach.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How does MyoCoach calculate muscle fatigue?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              MyoCoach tracks the target muscle groups trained in each exercise, factoring in total volume (sets x reps x weight) and elapsed recovery time to estimate readiness dynamically.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Is MyoCoach free to use?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes! You can download MyoCoach from the Google Play Store and start logging workouts and viewing muscle recovery immediately.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Can I create custom exercises and routines?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes. You can build personalized workout routines, target specific muscle groups, and customize exercise selections to match your gym equipment.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Is my fitness data kept private?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes. We take privacy seriously. We never sell your personal or workout data to third parties. Review our complete <a href="privacy.html" style="color: #00E5FF;">Privacy Policy</a> for full details.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Ready to Level Up Your Training?</h2>
+        <p>Join lifters using MyoCoach to optimize recovery and hit consistent personal records.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.PANDEV.myocoach" target="_blank" class="play-store-badge" style="display: inline-flex; margin: 0 auto;">
+          <svg viewBox="0 0 512 512">
+            <path fill="#4285F4" d="M48.7 13.9C36.9 26.5 30 46.1 30 71.4v369.2c0 25.3 6.9 44.9 18.7 57.5l3.2 3.1 206.8-206.8v-4.9L51.9 10.8l-3.2 3.1z"/>
+            <path fill="#FFBA00" d="M328.7 326.6l-70-70v-4.9l70-70 1.6.9 82.9 47.1c23.6 13.4 23.6 35.4 0 48.9l-82.9 47.1-1.6.9z"/>
+            <path fill="#00E676" d="M258.7 251.7L51.9 448.5c7.8 8.3 20.8 9.3 35.5 1l241.3-137.1-70-60.7z"/>
+            <path fill="#FF334B" d="M258.7 260.3l70-60.7L87.4 62.5c-14.7-8.3-27.7-7.3-35.5 1l206.8 196.8z"/>
+          </svg>
+          <div class="badge-text">
+            <span class="small">Get it on</span>
+            <span class="big">Google Play</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="brand">
+            <img src="icon.png" alt="MyoCoach Logo">
+            <span>MyoCoach</span>
+          </div>
+          <p>Personal Fitness, Strength Tracking &amp; Muscle Recovery Coach for Android.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Product</h5>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.PANDEV.myocoach" target="_blank">Google Play</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Legal &amp; Support</h5>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="mailto:support@myocoach.app">support@myocoach.app</a></li>
+              <li><a href="mailto:pankajlalla29@gmail.com">Contact Developer</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MyoCoach &bull; Built by PANDEV. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Accordion Toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isOpen) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
