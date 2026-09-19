@@ -40,12 +40,13 @@
     "name": "MyoCoach",
     "operatingSystem": "Android 8.0 and up",
     "applicationCategory": "HealthApplication",
+    "softwareVersion": "1.0.15",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Android gym workout log and muscle recovery tracker with anatomical fatigue heatmaps to avoid overtraining and optimize hypertrophy.",
+    "description": "Android gym workout log and muscle recovery tracker with anatomical fatigue heatmaps, smart recovery push notifications, and streak-protected rest days.",
     "url": "https://myocoach.app/",
     "downloadUrl": "https://play.google.com/store/apps/details?id=com.PANDEV.myocoach",
     "installUrl": "https://play.google.com/store/apps/details?id=com.PANDEV.myocoach",
@@ -77,6 +78,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Major muscle groups typically require 48 to 72 hours of recovery for hypertrophy. MyoCoach calculates recovery times dynamically based on sets, reps, and volume tonnage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will taking a rest day break my consistency streak?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. MyoCoach features intelligent Streak Safe protection. Scheduled rest days preserve your consistency streak automatically so you can recover without streak anxiety."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do muscle recovery push notifications work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "48 hours after your workout, MyoCoach alerts you when specific muscle groups like Chest & Back reach 100% recovery and are primed for progressive overload."
         }
       },
       {
@@ -357,8 +374,13 @@
                 <div style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;">DAILY MUSCLE READINESS</div>
                 <div style="font-size: 1.15rem; font-weight: 800;">Myo Recovery</div>
               </div>
-              <div class="score-badge">
-                <span>⚡ 88% READY</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <div style="display: inline-flex; align-items: center; gap: 4px; background: rgba(255, 179, 0, 0.12); border: 1px solid rgba(255, 179, 0, 0.35); padding: 4px 7px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; color: var(--warning);">
+                  <span>🛡️ STREAK SAFE</span>
+                </div>
+                <div class="score-badge">
+                  <span>⚡ 88%</span>
+                </div>
               </div>
             </div>
 
@@ -384,12 +406,15 @@
               </div>
             </div>
 
-            <div class="next-workout-box">
-              <div class="workout-info">
-                <h5>Suggested: Push Split</h5>
-                <p>Chest, Delts &amp; Triceps</p>
+            <div class="next-workout-box" style="flex-direction: column; align-items: stretch; gap: 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="workout-info">
+                  <h5>Day 1 &bull; Push Hypertrophy</h5>
+                  <p>Chest, Delts &amp; Triceps &bull; 45 min</p>
+                </div>
+                <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700; background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.25); padding: 2px 7px; border-radius: 4px;">Thumb Zone</span>
               </div>
-              <a href="https://play.google.com/store/apps/details?id=com.PANDEV.myocoach&referrer=utm_source%3Dmyocoach_app%26utm_medium%3Dwebsite%26utm_campaign%3Dmockup_cta" target="_blank" class="start-btn">Start</a>
+              <a href="https://play.google.com/store/apps/details?id=com.PANDEV.myocoach&referrer=utm_source%3Dmyocoach_app%26utm_medium%3Dwebsite%26utm_campaign%3Dmockup_cta" target="_blank" class="start-btn" style="text-align: center; padding: 10px; font-size: 0.88rem; border-radius: 10px; display: block;">▶ START TODAY'S WORKOUT</a>
             </div>
           </div>
         </div>
@@ -413,7 +438,7 @@
           <div class="bento-card">
             <div class="card-icon">⚡</div>
             <h3>Rapid Set &amp; Rep Logger</h3>
-            <p>Log sets, weights, and reps in 2 taps. With built-in automated rest timers, you stay focused on moving iron, not typing notes.</p>
+            <p>Log sets, weights, and reps in 2 taps. With built-in automated rest timers and in-workout exercise notes, you stay focused on moving iron, not typing.</p>
           </div>
 
           <div class="bento-card">
@@ -429,9 +454,33 @@
           </div>
 
           <div class="bento-card">
+            <div class="card-icon">🎯</div>
+            <h3>Personalized Onboarding &amp; Level Quiz</h3>
+            <p>Whether you're starting Day 1 or are an experienced lifter, our smart onboarding quiz curates your routine, exercises, and volume to match your level — with instant upgrades anytime.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="card-icon">🔔</div>
+            <h3>Smart Muscle Recovery Push Alerts</h3>
+            <p>Get notified 48 hours post-workout the moment specific muscles (e.g. Chest &amp; Back) reach 100% recovery so you know precisely when to hit PRs without overtraining.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="card-icon">🛡️</div>
+            <h3>Streak Safe Rest Days</h3>
+            <p>Science proves muscle tissue grows during rest. MyoCoach marks scheduled recovery days as Streak Safe, protecting your hard-earned consistency streak without anxiety.</p>
+          </div>
+
+          <div class="bento-card card-span-2">
+            <div class="card-icon">⚙️</div>
+            <h3>Fast Equipment Filter Chips &amp; In-Workout Notes</h3>
+            <p>Gym crowded? Filter exercises in 1 tap by Barbell, Dumbbell, Machine, Cable, or Bodyweight. Keep track of pin settings, seat notches, and form cues directly with in-workout exercise notes.</p>
+          </div>
+
+          <div class="bento-card">
             <div class="card-icon">🔒</div>
-            <h3>100% Privacy &amp; Offline Ready</h3>
-            <p>All workouts save locally on-device. No internet required in the gym basement, and your health data is never sold to advertisers.</p>
+            <h3>100% Free Core &amp; Offline Ready</h3>
+            <p>Unlimited logs, custom routines, exercise history, and offline tracking are 100% free with non-intrusive ads. No subscription paywalls blocking your workouts.</p>
           </div>
         </div>
       </div>
@@ -469,9 +518,9 @@
                 <td><span class="cross">✕ Rigid Templates</span></td>
               </tr>
               <tr>
-                <td><strong>Automated Rest Timers</strong></td>
-                <td class="highlight-col"><span class="check">✓ Auto-Starts</span></td>
-                <td><span class="cross">✕ None</span></td>
+                <td><strong>Automated Rest Timers &amp; Exercise Notes</strong></td>
+                <td class="highlight-col"><span class="check">✓ Auto-Starts + In-Workout Notes</span></td>
+                <td><span class="cross">✕ Messy manual notes</span></td>
                 <td><span class="check">✓ Yes</span></td>
               </tr>
               <tr>
@@ -481,6 +530,24 @@
                 <td><span class="check">✓ Yes</span></td>
               </tr>
               <tr>
+                <td><strong>Smart Muscle Recovery Push Alerts</strong></td>
+                <td class="highlight-col"><span class="check">✓ Precise Muscle Targets (48h)</span></td>
+                <td><span class="cross">✕ None</span></td>
+                <td><span class="cross">✕ Generic reminders</span></td>
+              </tr>
+              <tr>
+                <td><strong>Rest Day "Streak Safe 🛡️" Protection</strong></td>
+                <td class="highlight-col"><span class="check">✓ Streak Protected</span></td>
+                <td><span class="cross">✕ None</span></td>
+                <td><span class="cross">✕ Broken streaks</span></td>
+              </tr>
+              <tr>
+                <td><strong>Fast Equipment Filter Chips</strong></td>
+                <td class="highlight-col"><span class="check">✓ 1-Tap Swaps (Barbell, Dumbbell, etc.)</span></td>
+                <td><span class="cross">✕ Manual search</span></td>
+                <td><span class="cross">✕ Deep menus</span></td>
+              </tr>
+              <tr>
                 <td><strong>Works 100% Offline in the Gym</strong></td>
                 <td class="highlight-col"><span class="check">✓ Full Offline</span></td>
                 <td><span class="check">✓ Yes</span></td>
@@ -488,7 +555,7 @@
               </tr>
               <tr>
                 <td><strong>Pricing</strong></td>
-                <td class="highlight-col"><span class="check">100% Free on Google Play</span></td>
+                <td class="highlight-col"><span class="check">100% Free Core on Google Play</span></td>
                 <td>Free</td>
                 <td>$10 – $15 / month</td>
               </tr>
@@ -594,6 +661,46 @@
             </div>
             <div class="faq-answer">
               Yes! All workout data is stored locally in your device's database, meaning you can track sets, rest timers, and muscle readiness inside gyms with no cellular or Wi-Fi signal.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How does MyoCoach adapt to my fitness level?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              When you first start, a quick onboarding quiz tailors your routine whether you're a Beginner (guided foundational splits), Intermediate, or Advanced lifter (high volume hypertrophy). You can easily upgrade or change your experience level anytime in Settings.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Will taking a rest day break my workout streak?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              No. Muscle growth occurs during recovery. MyoCoach marks scheduled recovery days as "Streak Safe 🛡️", preserving your hard-earned consistency streak without anxiety or burnout.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do muscle recovery push notifications work?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              48 hours after you complete a session, MyoCoach calculates muscle repair and sends an alert specifying exactly which muscles (such as Chest &amp; Back) have reached 100% recovery and are ready for your next session.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What if gym equipment is taken?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              In the exercise selector, single-tap equipment filter chips (Barbell, Dumbbell, Machine, Cable, Bodyweight) let you find alternative exercises targeting the same muscle group in seconds.
             </div>
           </div>
         </div>
