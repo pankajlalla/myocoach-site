@@ -15,10 +15,14 @@
   <title>MyoCoach - #1 Muscle Recovery &amp; Strength Workout Tracker for Android</title>
   
   <meta name="description" content="Download MyoCoach for Android. The #1 gym workout log with real-time anatomical muscle recovery heatmaps, progressive overload tracking, and smart AI split routines. 100% Free on Google Play.">
-  <meta name="keywords" content="muscle recovery tracker, gym workout log app, muscle fatigue tracker, progressive overload app, hypertrophy workout planner, muscle recovery heatmap, push pull legs split tracker, fitness tracker android">
+  <meta name="keywords" content="muscle recovery tracker, gym workout log app, muscle fatigue tracker, progressive overload app, hypertrophy workout planner, muscle recovery heatmap, push pull legs split tracker, fitness tracker android, streak safe rest day">
   <meta name="author" content="PANDEV">
+  <meta name="theme-color" content="#070A12">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://myocoach.app/">
+  <link rel="manifest" href="manifest.json">
+  <link rel="alternate" type="text/plain" href="https://myocoach.app/llms.txt" title="LLM Knowledge Profile">
+  <link rel="alternate" href="android-app://com.PANDEV.myocoach/https/myocoach.app/">
 
   <!-- Native Google Play Smart App Banner for Android Chrome -->
   <meta name="google-play-app" content="app-id=com.PANDEV.myocoach">
@@ -29,6 +33,10 @@
   <meta property="og:title" content="MyoCoach - Muscle Recovery &amp; Strength Workout Tracker">
   <meta property="og:description" content="Stop guessing when to lift. Track muscle fatigue with real-time anatomical heatmaps and AI-driven recovery on Android.">
   <meta property="og:image" content="https://myocoach.app/icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="MyoCoach App Icon and Muscle Recovery Tracker">
   <meta property="og:site_name" content="MyoCoach">
 
   <!-- Twitter Card -->
@@ -41,7 +49,7 @@
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
 
-  <!-- Schema.org SoftwareApplication -->
+  <!-- Schema.org SoftwareApplication (Enhanced Rich Snippets) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,12 +57,33 @@
     "name": "MyoCoach",
     "operatingSystem": "Android 8.0 and up",
     "applicationCategory": "HealthApplication",
-    "softwareVersion": "1.0.15",
+    "applicationSubCategory": "Fitness & Workout Tracker",
+    "softwareVersion": "1.0.22",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "128",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
+    "featureList": [
+      "Real-time interactive anatomical muscle recovery heatmap",
+      "Dynamic fatigue calculation from sets, reps, and weight volume",
+      "Streak Safe rest day protection preserving user streaks",
+      "Push notification alerts when target muscles reach 100% recovery",
+      "Rapid two-tap set and rep logger with auto-starting rest timers",
+      "Single-tap equipment filter chips (Barbell, Dumbbell, Machine, Cable, Bodyweight)",
+      "Progressive overload & estimated One-Rep Max (1RM) charts",
+      "100% offline functionality without cellular or Wi-Fi connectivity"
+    ],
+    "screenshot": [
+      "https://myocoach.app/icon.png"
+    ],
     "description": "Android gym workout log and muscle recovery tracker with anatomical fatigue heatmaps, smart recovery push notifications, and streak-protected rest days.",
     "url": "https://myocoach.app/",
     "downloadUrl": "https://play.google.com/store/apps/details?id=com.PANDEV.myocoach",
@@ -67,7 +96,46 @@
   }
   </script>
 
-  <!-- FAQPage Schema for AI Search Engines & Google AI Overviews -->
+  <!-- Schema.org WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MyoCoach",
+    "url": "https://myocoach.app/",
+    "description": "Official portal for MyoCoach, the #1 muscle recovery and progressive overload gym workout tracker for Android."
+  }
+  </script>
+
+  <!-- Schema.org HowTo (Step-by-Step Recovery Optimization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Track Muscle Recovery and Progressive Overload with MyoCoach",
+    "description": "Step-by-step method to log strength training sets, visualize muscle damage, and train when muscles reach 100% recovery.",
+    "totalTime": "PT3M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Log Sets and Reps Fast",
+        "text": "Open MyoCoach offline in the gym, pick your routine, and log weights and reps in two taps with auto-starting rest timers."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Check Your Anatomical Recovery Heatmap",
+        "text": "Review dynamic color-coded fatigue states across chest, back, shoulders, arms, and legs based on cumulative volume tonnage."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Hit PRs When Muscles Are 100% Ready",
+        "text": "Receive a smart push alert 48 hours post-workout when specific muscle groups reach full recovery and are primed for progressive overload."
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQPage Schema for AI Search Engines & Google Rich Results (All 10 Questions) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -83,26 +151,18 @@
       },
       {
         "@type": "Question",
-        "name": "How long do muscles take to recover between workouts?",
+        "name": "How long do muscles need to recover between gym sessions?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Major muscle groups typically require 48 to 72 hours of recovery for hypertrophy. MyoCoach calculates recovery times dynamically based on sets, reps, and volume tonnage."
+          "text": "For hypertrophy and strength training, major muscle groups generally require 48 to 72 hours of recovery depending on intensity and volume. MyoCoach calculates recovery times dynamically based on total volume tonnage (sets × reps × weight)."
         }
       },
       {
         "@type": "Question",
-        "name": "Will taking a rest day break my consistency streak?",
+        "name": "How does MyoCoach calculate muscle fatigue?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. MyoCoach features intelligent Streak Safe protection. Scheduled rest days preserve your consistency streak automatically so you can recover without streak anxiety."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do muscle recovery push notifications work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "48 hours after your workout, MyoCoach alerts you when specific muscle groups like Chest & Back reach 100% recovery and are primed for progressive overload."
+          "text": "MyoCoach tracks the target muscle groups trained in each exercise, factoring in total volume tonnage and elapsed hours since your last session to project dynamic readiness: 100% Ready, Recovering, or Fatigued."
         }
       },
       {
@@ -111,6 +171,54 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes, MyoCoach is 100% free to download on Google Play with full offline workout tracking and no mandatory subscriptions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I create custom workout routines and exercises?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can customize existing routines or create custom splits (Push/Pull/Legs, Upper/Lower, Bro Split, Full Body) and select target muscle groups for personalized tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does MyoCoach work offline without internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! All workout data is stored locally in your device's database, meaning you can track sets, rest timers, and muscle readiness inside gyms with no cellular or Wi-Fi signal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does MyoCoach adapt to my fitness level?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you first start, a quick onboarding quiz tailors your routine whether you're a Beginner (guided foundational splits), Intermediate, or Advanced lifter (high volume hypertrophy). You can easily upgrade or change your experience level anytime in Settings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will taking a rest day break my workout streak?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Muscle growth occurs during recovery. MyoCoach marks scheduled recovery days as 'Streak Safe 🛡️', preserving your hard-earned consistency streak without anxiety or burnout."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do muscle recovery push notifications work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "48 hours after you complete a session, MyoCoach calculates muscle repair and sends an alert specifying exactly which muscles (such as Chest & Back) have reached 100% recovery and are ready for your next session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if gym equipment is taken?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the exercise selector, single-tap equipment filter chips (Barbell, Dumbbell, Machine, Cable, Bodyweight) let you find alternative exercises targeting the same muscle group in seconds."
         }
       }
     ]
@@ -196,10 +304,6 @@
     .badge-text .big { font-size: 1.2rem; font-weight: 800; line-height: 1.2; }
     .secondary-link { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 12px 18px; border-radius: 10px; transition: color 0.2s; }
     .secondary-link:hover { color: var(--text-main); }
-  </style>
-</head>
-
-  <style>
     .mockup-wrapper { position: relative; display: flex; justify-content: center; }
     .phone-card {
       width: 100%; max-width: 360px; background: #0F1626;
@@ -314,7 +418,71 @@
       .hero h1 { font-size: 2.5rem; }
       .nav-links { display: none; }
     }
+    .aeo-answer-capsule {
+      background: rgba(0, 229, 255, 0.05);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 16px 16px 0;
+      padding: 20px 24px;
+      margin: 28px auto;
+      max-width: 860px;
+      text-align: left;
+    }
+    .aeo-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 800;
+      color: var(--primary);
+      background: rgba(0, 229, 255, 0.12);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .aeo-answer-capsule p {
+      color: #E2E8F0;
+      font-size: 1.02rem;
+      line-height: 1.68;
+    }
+    .aeo-answer-capsule strong {
+      color: #FFF;
+      font-weight: 750;
+    }
+    .qr-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 14px 20px;
+      margin-top: 24px;
+      text-align: left;
+    }
+    .qr-card img {
+      width: 84px;
+      height: 84px;
+      border-radius: 8px;
+      background: #FFF;
+      padding: 4px;
+    }
+    .qr-info h6 {
+      font-size: 0.95rem;
+      font-weight: 750;
+      color: #FFF;
+      margin-bottom: 4px;
+    }
+    .qr-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    @media (max-width: 600px) {
+      .qr-card { display: none; }
+    }
   </style>
+</head>
 
 <body>
   <header>
@@ -326,6 +494,7 @@
         </a>
         <ul class="nav-links">
           <li><a href="#features">Features</a></li>
+          <li><a href="#recovery-science">Recovery Science</a></li>
           <li><a href="#comparison">Compare</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -437,6 +606,11 @@
           <p>Built for bodybuilders, powerlifters, and everyday athletes who want science-backed recovery over guesswork.</p>
         </div>
 
+        <div class="aeo-answer-capsule">
+          <span class="aeo-badge">AEO Direct Answer</span>
+          <p><strong>What is an anatomical muscle recovery tracker?</strong> An anatomical muscle recovery tracker is an intelligent workout logging platform that translates sets, repetitions, and weight load (volume tonnage) into a visual anatomical heat model. By mapping muscle fatigue across primary muscle groups in real time, it identifies which muscles are fatigued, repairing, or primed for hypertrophy, eliminating guesswork and preventing overtraining injuries.</p>
+        </div>
+
         <div class="bento-grid">
           <div class="bento-card card-span-2">
             <div class="card-icon">🧬</div>
@@ -490,6 +664,87 @@
             <div class="card-icon">🔒</div>
             <h3>100% Free Core &amp; Offline Ready</h3>
             <p>Unlimited logs, custom routines, exercise history, and offline tracking are 100% free with non-intrusive ads. No subscription paywalls blocking your workouts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Muscle Recovery Science & Benchmark Reference Table (AEO & AI Search Citation Magnet) -->
+    <section id="recovery-science">
+      <div class="container">
+        <div class="section-header">
+          <h2>Hypertrophy Science: <span class="gradient-text">Muscle Recovery Benchmarks</span></h2>
+          <p>How long do muscle groups need to recover between workouts? Based on the Stimulus-Recovery-Adaptation (SRA) cycle, major muscle groups require 48 to 72 hours of cellular repair before maximal progressive overload can be achieved.</p>
+        </div>
+
+        <div class="aeo-answer-capsule">
+          <span class="aeo-badge">Sports Science Insight</span>
+          <p><strong>How does MyoCoach calculate dynamic recovery?</strong> Instead of using static 24-hour timers, MyoCoach calculates cumulative muscle fatigue via total volume tonnage: <em>Volume Tonnage = Sets × Reps × Weight</em>. 48 hours post-workout, when muscle protein synthesis (MPS) completes, MyoCoach dispatches an automated push notification confirming your target muscle group is 100% primed for your next PR attempt.</p>
+        </div>
+
+        <div class="comparison-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Muscle Group</th>
+                <th>Primary Compound Exercises</th>
+                <th class="highlight-col">Typical Recovery Window</th>
+                <th>SRA Fatigue Impact</th>
+                <th>MyoCoach 100% Ready Indicator</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Chest (Pectorals)</strong></td>
+                <td>Barbell Bench Press, Incline DB Press, Dips</td>
+                <td class="highlight-col"><strong>48 – 72 Hours</strong></td>
+                <td>High (Heavy eccentric stretch damage)</td>
+                <td><span class="check">✓ Heatmap turns Green (100% Ready)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Back (Lats, Traps, Rhomboids)</strong></td>
+                <td>Barbell Rows, Pull-Ups, Deadlifts, Lat Pulldowns</td>
+                <td class="highlight-col"><strong>48 – 72 Hours</strong></td>
+                <td>High (Axial loading + systemic CNS fatigue)</td>
+                <td><span class="check">✓ Push Alert: Back Primed for Pull Day</span></td>
+              </tr>
+              <tr>
+                <td><strong>Quadriceps &amp; Hamstrings</strong></td>
+                <td>Barbell Squats, Leg Press, Romanian Deadlifts</td>
+                <td class="highlight-col"><strong>48 – 72 Hours</strong></td>
+                <td>Maximum (Massive glycogen depletion &amp; volume)</td>
+                <td><span class="check">✓ Full Lower-Body Readiness Flagged</span></td>
+              </tr>
+              <tr>
+                <td><strong>Deltoids (Shoulders)</strong></td>
+                <td>Overhead Press, Lateral Raises, Face Pulls</td>
+                <td class="highlight-col"><strong>36 – 48 Hours</strong></td>
+                <td>Moderate (Receives secondary stimulus on push days)</td>
+                <td><span class="check">✓ 90%+ Ready Status for Upper Split</span></td>
+              </tr>
+              <tr>
+                <td><strong>Biceps &amp; Triceps (Arms)</strong></td>
+                <td>Barbell Curls, Tricep Pushdowns, Skullcrushers</td>
+                <td class="highlight-col"><strong>36 – 48 Hours</strong></td>
+                <td>Moderate (Smaller muscle belly, rapid repair)</td>
+                <td><span class="check">✓ Ready for Direct Arm Isolation</span></td>
+              </tr>
+              <tr>
+                <td><strong>Calves &amp; Core (Abs)</strong></td>
+                <td>Standing Calf Raises, Hanging Leg Raises, Planks</td>
+                <td class="highlight-col"><strong>24 – 36 Hours</strong></td>
+                <td>Low-Moderate (Dense oxidative fiber composition)</td>
+                <td><span class="check">✓ Fast 24h Turnaround</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 32px; background: linear-gradient(135deg, rgba(255, 179, 0, 0.08) 0%, rgba(124, 77, 255, 0.08) 100%); border: 1px solid rgba(255, 179, 0, 0.25); border-radius: 20px; padding: 28px; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+          <div style="font-size: 2.2rem; line-height: 1;">🛡️</div>
+          <div style="flex: 1; min-width: 260px;">
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 6px;">The Rest Day Paradox: Why Rest Days Build More Muscle Than Daily Grinding</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Resistance training breaks down muscle tissue; cellular repair, nutrition, and rest are what build it back denser and stronger. Traditional fitness apps punish rest days by breaking your streak, causing streak anxiety and overtraining burnout. <strong>MyoCoach's Streak Safe 🛡️ protection automatically preserves your streak on scheduled rest days</strong>, aligning your mindset with real exercise physiology.</p>
           </div>
         </div>
       </div>
@@ -733,6 +988,16 @@
             <span class="big">Google Play</span>
           </div>
         </a>
+
+        <div style="display: flex; justify-content: center;">
+          <div class="qr-card">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.PANDEV.myocoach%26referrer%3Dutm_source%253Dwebsite_qr" alt="Scan QR code to install MyoCoach on Android" loading="lazy">
+            <div class="qr-info">
+              <h6>Scan with your Android phone</h6>
+              <p>Instant direct install via Google Play Store &bull; 100% Free</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -766,6 +1031,7 @@
             <h5>Product</h5>
             <ul>
               <li><a href="#features">Features</a></li>
+              <li><a href="#recovery-science">Recovery Science</a></li>
               <li><a href="#comparison">Compare</a></li>
               <li><a href="#how-it-works">How It Works</a></li>
               <li><a href="#faq">FAQ</a></li>
@@ -773,9 +1039,11 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h5>Legal &amp; Support</h5>
+            <h5>Legal &amp; Developers</h5>
             <ul>
               <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="llms.txt" target="_blank">AI Profile (llms.txt)</a></li>
+              <li><a href="sitemap.xml" target="_blank">Sitemap</a></li>
               <li><a href="mailto:support@myocoach.app">support@myocoach.app</a></li>
               <li><a href="mailto:pankajlalla29@gmail.com">Contact Developer</a></li>
             </ul>
