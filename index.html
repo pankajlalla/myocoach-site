@@ -498,6 +498,7 @@
           <li><a href="#comparison">Compare</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="/app/" style="color: var(--primary); font-weight: 700;">Coach Portal</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>
         <a href="https://play.google.com/store/apps/details?id=com.PANDEV.myocoach&referrer=utm_source%3Dmyocoach_app%26utm_medium%3Dwebsite%26utm_campaign%3Dnav_cta" target="_blank" class="nav-btn">
@@ -1057,6 +1058,14 @@
   </footer>
 
   <script>
+    // Seamless routing for Coach invite links (e.g., https://myocoach.app/?coach=ALEX)
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('coach')) {
+        window.location.replace('/app/' + window.location.search);
+      }
+    })();
+
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
         const isOpen = item.classList.contains('active');
